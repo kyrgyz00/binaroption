@@ -1,10 +1,8 @@
 import 'dart:io';
 
 void main() {
-  
   binar_1();
 }
-
 
 binar_1() {
   print("imagine a number from 1 till 128,be honest");
@@ -22,16 +20,19 @@ binar_1() {
     if (answer == '+') {
       min = mid;
       mid = (max + min) ~/ 2;
+      counter++;
     } else if (answer == "-") {
       max = mid;
       mid = (max + min) ~/ 2;
+      counter++;
     } else if (answer == "yes") {
       print("the end of the game");
+      counter++;
     } else {
       print("the $answer is not correct");
       answer = stdin.readLineSync()!;
+      
     }
-    counter++;
   }
-  print("all is $counter");
+  print("got it on $counter steps");
 }
